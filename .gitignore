@@ -1,0 +1,8 @@
+__pycache__
+static/*
+env
+.env
+venv
+.coverage
+media
+*.sqlite3

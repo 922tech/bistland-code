@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}Delete Titanic Record{% endblock %}
+
+{% block content %}
+    <h2>Confirm Deletion</h2>
+    <p>Are you sure you want to delete the record "{{ object.name }}"?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Yes, delete</button>
+        <a href="{% url 'titanic_list' %}" class="btn btn-secondary">Cancel</a>
+    </form>
+{% endblock %}

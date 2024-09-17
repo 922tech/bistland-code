@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block title %}Titanic DataGrid{% endblock %}
+
+{% block content %}
+    <h2>Titanic DataGrid</h2>
+    {% load render_table from django_tables2 %}
+    {% render_table table %}
+{% endblock %}

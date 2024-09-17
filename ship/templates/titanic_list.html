@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+	
+<table>
+    <tr>
+        <th>Passenger ID</th>
+        <th>Name</th>
+        <th>Survived</th>
+        <th>Class</th>
+        <th>Actions</th>
+    </tr>
+    {% for item in titanic_data %}
+    <tr>
+        <td>{{ item.passengerID }}</td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.survived }}</td>
+        <td>{{ item.pclass }}</td>
+        <td>
+            <a href="{% url 'titanic_edit' item.pk %}">Edit</a> |
+            <a href="{% url 'titanic_delete' item.pk %}">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+<a href="{% url 'titanic_create' %}">Create New Record</a>
+{% endblock %}
